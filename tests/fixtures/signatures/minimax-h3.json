@@ -1,0 +1,69 @@
+{
+  "schema_name": "lora-signature-fixture",
+  "schema_version": "1.0",
+  "tool_version": "0.6.0",
+  "provenance": {
+    "source_type": "synthetic",
+    "exporter": "regression-fixture",
+    "notes": "Minimal payload-free header shape derived from regression expectations."
+  },
+  "metadata": {},
+  "fixture_id": "minimax-h3-omni-dit",
+  "filename": "minimax_h3_fixture.safetensors",
+  "tensors": [
+    {
+      "key": "blocks.0.attn.qkv_proj.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        5376
+      ]
+    },
+    {
+      "key": "blocks.0.adaln_proj.linear.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        5376
+      ]
+    },
+    {
+      "key": "blocks.0.mlp.fc1.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        5376
+      ]
+    },
+    {
+      "key": "blocks.0.mlp.fc2.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        14336
+      ]
+    },
+    {
+      "key": "video_patch_proj.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        96
+      ]
+    },
+    {
+      "key": "audio_patch_proj.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        32
+      ]
+    }
+  ],
+  "expected": {
+    "arch": "MiniMaxH3",
+    "structural_family": "MiniMaxH3OmniDiT",
+    "status": "ok",
+    "confidence": "high"
+  }
+}

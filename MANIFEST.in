@@ -1,0 +1,13 @@
+include README.md
+include CHANGELOG.md
+include MIGRATION.md
+include MODEL_MATRIX.md
+include CONTRIBUTING.md
+include SECURITY.md
+include LICENSE-NOTICE.md
+include TEST_RESULTS.md
+include inspect_lora.py
+include inspect_sort_lora.py
+include test_lora_tools.py
+recursive-include docs *.md *.py
+recursive-include tests *.py *.json

@@ -1,0 +1,37 @@
+{
+  "schema_name": "lora-signature-fixture",
+  "schema_version": "1.0",
+  "tool_version": "0.6.0",
+  "provenance": {
+    "source_type": "synthetic",
+    "exporter": "regression-fixture",
+    "notes": "Minimal payload-free header shape derived from regression expectations."
+  },
+  "metadata": {},
+  "fixture_id": "zimage-comfy-fused-qkv",
+  "filename": "zimage_fixture.safetensors",
+  "tensors": [
+    {
+      "key": "diffusion_model.layers.0.attention.qkv.lora_down.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        3840
+      ]
+    },
+    {
+      "key": "diffusion_model.layers.0.feed_forward.w2.lora_down.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        10240
+      ]
+    }
+  ],
+  "expected": {
+    "arch": "ZImage",
+    "structural_family": "ZImageDiT",
+    "status": "ok",
+    "confidence": "high"
+  }
+}

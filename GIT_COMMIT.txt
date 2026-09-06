@@ -1,0 +1,7 @@
+Source repository commit:
+3082bbb1bd0eaf2331735682e7828e50e54a8d3e  complete community-grade 0.6 release
+
+Development commits:
+4f64899  modular v0.6 baseline before hardening
+2c0ccde  harden schemas paths collisions and transactions
+3082bbb  complete community-grade 0.6 release

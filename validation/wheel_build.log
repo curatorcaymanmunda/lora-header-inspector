@@ -1,0 +1,10 @@
+WARNING: The directory '/home/oai/.cache/pip' or its parent directory is not owned or is not writable by the current user. The cache has been disabled. Check the permissions and owner of that directory. If executing pip with sudo, you should use sudo's -H flag.
+Processing /mnt/data/lora_header_inspector_community_v0.6.0
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: lora-header-inspector
+  Building wheel for lora-header-inspector (pyproject.toml): started
+  Building wheel for lora-header-inspector (pyproject.toml): finished with status 'done'
+  Created wheel for lora-header-inspector: filename=lora_header_inspector-0.6.0-py3-none-any.whl size=88231 sha256=41cb421eac0caac78ef4ecd062b4a443e0ef128badabb4a8fbc120b7ce9ee1c2
+  Stored in directory: /tmp/pip-ephem-wheel-cache-epmf7uto/wheels/e6/4f/13/e8e9dc078164c33fe3af663ff9a09ba40da5de62e6c06693bc
+Successfully built lora-header-inspector

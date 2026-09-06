@@ -1,0 +1,47 @@
+{
+  "cases_completed": 10000,
+  "cases_requested": 10000,
+  "confidences": {
+    "high": 5728,
+    "low": 3652,
+    "medium": 620
+  },
+  "elapsed_seconds": 6.940438,
+  "seed": 12648430,
+  "statuses": {
+    "ambiguous": 1269,
+    "conflict": 8484,
+    "ok": 247
+  },
+  "top_architectures": {
+    "Anima": 660,
+    "AuraFlow": 856,
+    "Chroma": 338,
+    "ErnieImage": 779,
+    "Flux1": 358,
+    "Flux2": 612,
+    "Ideogram4": 864,
+    "Krea2": 623,
+    "MiniMaxH3": 774,
+    "SD15": 481,
+    "SD2": 61,
+    "SDXL": 1092,
+    "Unknown": 527,
+    "Wan": 881,
+    "ZImage": 1094
+  },
+  "top_structural_families": {
+    "DualSingleStreamDiT": 565,
+    "ErnieImageDiT": 2578,
+    "Ideogram4DiT": 59,
+    "Krea2DiT": 200,
+    "SDUNet": 521,
+    "SingleStreamSwiGLUDiT": 3687,
+    "TransformerDiT": 295,
+    "Unknown": 1952,
+    "WanLikeVideoDiT": 77,
+    "ZImageDiT": 66
+  },
+  "unhandled_errors": []
+}
+RESULT: PASS

@@ -1,0 +1,29 @@
+{
+  "schema_name": "lora-signature-fixture",
+  "schema_version": "1.0",
+  "tool_version": "0.6.0",
+  "provenance": {
+    "source_type": "synthetic",
+    "exporter": "regression-fixture",
+    "notes": "Minimal payload-free header shape derived from regression expectations."
+  },
+  "metadata": {},
+  "fixture_id": "anima-llm-adapter",
+  "filename": "anima_fixture.safetensors",
+  "tensors": [
+    {
+      "key": "diffusion_model.llm_adapter.blocks.0.self_attn.q_proj.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        2048
+      ]
+    }
+  ],
+  "expected": {
+    "arch": "Anima",
+    "structural_family": "CosmosPredict2DiT",
+    "status": "ok",
+    "confidence": "high"
+  }
+}

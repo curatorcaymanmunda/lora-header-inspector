@@ -1,0 +1,29 @@
+{
+  "schema_name": "lora-signature-fixture",
+  "schema_version": "1.0",
+  "tool_version": "0.6.0",
+  "provenance": {
+    "source_type": "synthetic",
+    "exporter": "regression-fixture",
+    "notes": "Minimal payload-free header shape derived from regression expectations."
+  },
+  "metadata": {},
+  "fixture_id": "flux2-fused-single-projection",
+  "filename": "flux2_fixture.safetensors",
+  "tensors": [
+    {
+      "key": "transformer.single_transformer_blocks.47.attn.to_qkv_mlp_proj.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        6144
+      ]
+    }
+  ],
+  "expected": {
+    "arch": "Flux2",
+    "structural_family": "DualSingleStreamDiT",
+    "status": "ok",
+    "confidence": "high"
+  }
+}

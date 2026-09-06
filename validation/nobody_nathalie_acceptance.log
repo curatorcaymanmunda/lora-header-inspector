@@ -1,0 +1,95 @@
+BEFORE
+  ZimageBase/nobody_nathalie.safetensors dev=28 ino=1579370 size=188733
+  Zit/nobody_nathalie.safetensors dev=28 ino=1579372 size=188733
+  same inode: False
+
+PLAN
+  action=hardlink_duplicate_member source=ZimageBase/nobody_nathalie.safetensors destination=ZImage/Base/nobody_nathalie.safetensors collision=exact_duplicate role=duplicate
+  action=hardlink_duplicate_group source=Zit/nobody_nathalie.safetensors destination=ZImage/Base/nobody_nathalie.safetensors collision=exact_duplicate role=canonical
+  collision groups:
+[
+  {
+    "canonical_path": "/tmp/lora-nobody-demo-8v2ci9e4/loras/Zit/nobody_nathalie.safetensors",
+    "content_sha256": "156621f59a4e09b5c293b63c6dea70df11ae002a05cf99f32f48912f3ebff52c",
+    "details": {
+      "canonical_reason": "selected deterministically (most sidecars, then shortest path)",
+      "comparison_reason": "all collision members have the same full SHA-256",
+      "hashes": {
+        "/tmp/lora-nobody-demo-8v2ci9e4/loras/ZimageBase/nobody_nathalie.safetensors": "156621f59a4e09b5c293b63c6dea70df11ae002a05cf99f32f48912f3ebff52c",
+        "/tmp/lora-nobody-demo-8v2ci9e4/loras/Zit/nobody_nathalie.safetensors": "156621f59a4e09b5c293b63c6dea70df11ae002a05cf99f32f48912f3ebff52c"
+      },
+      "identities": {
+        "/tmp/lora-nobody-demo-8v2ci9e4/loras/ZimageBase/nobody_nathalie.safetensors": {
+          "ctime_ns": 1788329675698742273,
+          "device": 28,
+          "inode": 1579370,
+          "mtime_ns": 1788329675698742273,
+          "size": 188733
+        },
+        "/tmp/lora-nobody-demo-8v2ci9e4/loras/Zit/nobody_nathalie.safetensors": {
+          "ctime_ns": 1788329675699142116,
+          "device": 28,
+          "inode": 1579372,
+          "mtime_ns": 1788329675699142116,
+          "size": 188733
+        }
+      }
+    },
+    "distinct_inode_count": "2",
+    "group_id": "collision-aebc89939398",
+    "kind": "exact_duplicate",
+    "logical_duplicate_bytes": "188733",
+    "policy": "hardlink",
+    "rows": [
+      {
+        "action": "hardlink_duplicate_member",
+        "canonical": "False",
+        "duplicate_destination": "",
+        "duplicate_role": "duplicate",
+        "path": "/tmp/lora-nobody-demo-8v2ci9e4/loras/ZimageBase/nobody_nathalie.safetensors",
+        "reason": "handled by collision-group leader /tmp/lora-nobody-demo-8v2ci9e4/loras/Zit/nobody_nathalie.safetensors"
+      },
+      {
+        "action": "hardlink_duplicate_group",
+        "canonical": "True",
+        "duplicate_destination": "",
+        "duplicate_role": "canonical",
+        "path": "/tmp/lora-nobody-demo-8v2ci9e4/loras/Zit/nobody_nathalie.safetensors",
+        "reason": "2 paths contain identical bytes; sha256=156621f59a4e09b5c293b63c6dea70df11ae002a05cf99f32f48912f3ebff52c"
+      }
+    ],
+    "sidecar_notes": [],
+    "sources": [
+      "/tmp/lora-nobody-demo-8v2ci9e4/loras/ZimageBase/nobody_nathalie.safetensors",
+      "/tmp/lora-nobody-demo-8v2ci9e4/loras/Zit/nobody_nathalie.safetensors"
+    ],
+    "target": "/tmp/lora-nobody-demo-8v2ci9e4/loras/ZImage/Base/nobody_nathalie.safetensors"
+  }
+]
+[SKIP] hardlink_duplicate_member    nobody_nathalie.safetensors  handled by collision-group leader /tmp/lora-nobody-demo-8v2ci9e4/loras/Zit/nobody_nathalie.safetensors
+[APPLY] hardlink_duplicate_group     /tmp/lora-nobody-demo-8v2ci9e4/loras/Zit/nobody_nathalie.safetensors
+
+Apply complete. completed=1 skipped=1 rolled_back=0 errors=0
+Manifest: /tmp/lora-nobody-demo-8v2ci9e4/apply_manifest.json
+
+APPLY COUNTS {"errors": 0, "moved": 1, "rolled_back": 0, "skipped": 1}
+AFTER APPLY
+  ZimageBase/nobody_nathalie.safetensors dev=28 ino=1579372 links=3 size=188733
+  Zit/nobody_nathalie.safetensors dev=28 ino=1579372 links=3 size=188733
+  ZImage/Base/nobody_nathalie.safetensors dev=28 ino=1579372 links=3 size=188733
+  all three same inode: True
+
+UNDO
+[UNDO-CHECK] /tmp/lora-nobody-demo-8v2ci9e4/loras/Zit/nobody_nathalie.safetensors
+       reversible hard-link operation
+[UNDO] /tmp/lora-nobody-demo-8v2ci9e4/loras/Zit/nobody_nathalie.safetensors
+Undo complete. completed=1 rolled_back=0 errors=0
+Undo manifest: /tmp/lora-nobody-demo-8v2ci9e4/apply_manifest_undo_20260902T061435736397Z.json
+  return code: 0
+AFTER UNDO
+  ZimageBase/nobody_nathalie.safetensors dev=28 ino=1579377 links=1 size=188733
+  Zit/nobody_nathalie.safetensors dev=28 ino=1579372 links=1 size=188733
+  independent inodes restored: True
+  identical bytes restored: True
+
+RESULT: PASS

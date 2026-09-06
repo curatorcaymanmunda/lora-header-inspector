@@ -1,0 +1,109 @@
+=== INSPECT AND INITIAL REPORT PLAN ===
+duplicate.safetensors: ZImage/Base [high; ok; ZImageDiT]
+portrait.safetensors: SDXL [high; ok; SDUNet]
+duplicate.safetensors: ZImage/Base [high; ok; ZImageDiT]
+
+Wrote 3 records to /tmp/lora-e2e-yD7gXi/index.csv
+Status summary: ok=3
+lora-sort: CSV=/tmp/lora-e2e-yD7gXi/index.csv base=/tmp/lora-e2e-yD7gXi/loras subfolders=on min-confidence=high duplicate-policy=report apply=no (dry run)
+
+Sort plan: 3 entries
+By status:
+  ok                               3
+By bucket:
+  SDXL                             1
+  ZImage/Base                      2
+By action:
+  move                             1
+  skip_exact_duplicate_group       2
+
+Collision groups: 1
+[EXACT_DUPLICATE] collision-0e81ee91e191
+  target: /tmp/lora-e2e-yD7gXi/loras/ZImage/Base/duplicate.safetensors
+  policy: report
+  sha256: 3d947542908ac665f0ac4afef9df4e8396ec20a52f4adbd8958e5badba289239
+  sources: 2
+Sort plan written to: /tmp/lora-e2e-yD7gXi/index_sort_plan.csv
+Collision report written to: /tmp/lora-e2e-yD7gXi/index_collision_report.json
+Review the plan CSV, then apply it with an explicit --base: /tmp/lora-e2e-yD7gXi/index_sort_plan.csv
+[SKIP] skip_exact_duplicate_group   duplicate.safetensors  2 paths contain identical bytes; sha256=3d947542908ac665f0ac4afef9df4e8396ec20a52f4adbd8958e5badba289239
+[DRY] move                         /tmp/lora-e2e-yD7gXi/loras/IncomingA/portrait.safetensors -> /tmp/lora-e2e-yD7gXi/loras/SDXL/portrait.safetensors
+[SKIP] skip_exact_duplicate_group   duplicate.safetensors  2 paths contain identical bytes; sha256=3d947542908ac665f0ac4afef9df4e8396ec20a52f4adbd8958e5badba289239
+
+Dry run complete. No files were moved or relinked.
+=== REBUILD REVIEW PLAN WITH HARDLINK POLICY ===
+lora-sort: CSV=/tmp/lora-e2e-yD7gXi/index_sort_plan.csv base=/tmp/lora-e2e-yD7gXi/loras subfolders=on min-confidence=high duplicate-policy=hardlink apply=no (dry run)
+
+Sort plan: 3 entries
+By status:
+  ok                               3
+By bucket:
+  SDXL                             1
+  ZImage/Base                      2
+By action:
+  hardlink_duplicate_group         1
+  hardlink_duplicate_member        1
+  move                             1
+
+Collision groups: 1
+[EXACT_DUPLICATE] collision-0e81ee91e191
+  target: /tmp/lora-e2e-yD7gXi/loras/ZImage/Base/duplicate.safetensors
+  policy: hardlink
+  sha256: 3d947542908ac665f0ac4afef9df4e8396ec20a52f4adbd8958e5badba289239
+  sources: 2
+    - /tmp/lora-e2e-yD7gXi/loras/IncomingA/duplicate.safetensors
+    - /tmp/lora-e2e-yD7gXi/loras/IncomingB/duplicate.safetensors
+  canonical: /tmp/lora-e2e-yD7gXi/loras/IncomingA/duplicate.safetensors
+  action: hardlink_duplicate_group  /tmp/lora-e2e-yD7gXi/loras/IncomingA/duplicate.safetensors
+  action: hardlink_duplicate_member  /tmp/lora-e2e-yD7gXi/loras/IncomingB/duplicate.safetensors
+Sort plan written to: /tmp/lora-e2e-yD7gXi/index_sort_plan.csv
+Collision report written to: /tmp/lora-e2e-yD7gXi/index_collision_report.json
+Review the plan CSV, then apply it with an explicit --base: /tmp/lora-e2e-yD7gXi/index_sort_plan.csv
+[DRY] hardlink_duplicate_group     /tmp/lora-e2e-yD7gXi/loras/IncomingA/duplicate.safetensors -> /tmp/lora-e2e-yD7gXi/loras/ZImage/Base/duplicate.safetensors
+[DRY] move                         /tmp/lora-e2e-yD7gXi/loras/IncomingA/portrait.safetensors -> /tmp/lora-e2e-yD7gXi/loras/SDXL/portrait.safetensors
+[SKIP] hardlink_duplicate_member    duplicate.safetensors  handled by collision-group leader /tmp/lora-e2e-yD7gXi/loras/IncomingA/duplicate.safetensors
+
+Dry run complete. No files were moved or relinked.
+=== APPLY REVIEWED PLAN ===
+lora-sort: CSV=/tmp/lora-e2e-yD7gXi/index_sort_plan.csv base=/tmp/lora-e2e-yD7gXi/loras subfolders=on min-confidence=high duplicate-policy=hardlink apply=YES
+
+Sort plan: 3 entries
+By status:
+  ok                               3
+By bucket:
+  SDXL                             1
+  ZImage/Base                      2
+By action:
+  hardlink_duplicate_group         1
+  hardlink_duplicate_member        1
+  move                             1
+
+Collision groups: 1
+[EXACT_DUPLICATE] collision-0e81ee91e191
+  target: /tmp/lora-e2e-yD7gXi/loras/ZImage/Base/duplicate.safetensors
+  policy: hardlink
+  sha256: 3d947542908ac665f0ac4afef9df4e8396ec20a52f4adbd8958e5badba289239
+  sources: 2
+Sort plan written to: /tmp/lora-e2e-yD7gXi/index_sort_plan.csv
+Collision report written to: /tmp/lora-e2e-yD7gXi/index_collision_report.json
+[APPLY] hardlink_duplicate_group     /tmp/lora-e2e-yD7gXi/loras/IncomingA/duplicate.safetensors
+[APPLY] move                         /tmp/lora-e2e-yD7gXi/loras/IncomingA/portrait.safetensors
+[SKIP] hardlink_duplicate_member    duplicate.safetensors  handled by collision-group leader /tmp/lora-e2e-yD7gXi/loras/IncomingA/duplicate.safetensors
+
+Apply complete. completed=2 skipped=1 rolled_back=0 errors=0
+Manifest: /tmp/lora-e2e-yD7gXi/apply.json
+Sort plan written to: /tmp/lora-e2e-yD7gXi/index_sort_plan.csv
+post-apply verification: PASS
+  hardlink count: 3
+  manifest operations: 2
+=== UNDO ===
+[UNDO-CHECK] /tmp/lora-e2e-yD7gXi/loras/IncomingA/portrait.safetensors
+       reversible move operation
+[UNDO-CHECK] /tmp/lora-e2e-yD7gXi/loras/IncomingA/duplicate.safetensors
+       reversible hard-link operation
+[UNDO] /tmp/lora-e2e-yD7gXi/loras/IncomingA/portrait.safetensors
+[UNDO] /tmp/lora-e2e-yD7gXi/loras/IncomingA/duplicate.safetensors
+Undo complete. completed=2 rolled_back=0 errors=0
+Undo manifest: /tmp/lora-e2e-yD7gXi/apply_undo_20260902T061256183325Z.json
+post-undo verification: PASS
+RESULT: PASS

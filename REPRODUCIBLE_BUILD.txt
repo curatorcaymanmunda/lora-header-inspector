@@ -1,0 +1,5 @@
+Release archive normalization:
+SOURCE_DATE_EPOCH=1788329789
+UTC timestamp=2026-09-02T06:16:29Z
+Archive entries are sorted and normalized to uid/gid 0.
+The ZIP preserves executable mode bits and uses the same normalized timestamp.

@@ -1,0 +1,37 @@
+{
+  "schema_name": "lora-signature-fixture",
+  "schema_version": "1.0",
+  "tool_version": "0.6.0",
+  "provenance": {
+    "source_type": "synthetic",
+    "exporter": "regression-fixture",
+    "notes": "Minimal payload-free header shape derived from regression expectations."
+  },
+  "metadata": {},
+  "fixture_id": "ideogram4-comfy-fused-qkv",
+  "filename": "ideogram4_fixture.safetensors",
+  "tensors": [
+    {
+      "key": "diffusion_model.layers.0.attention.qkv.lora_down.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        4608
+      ]
+    },
+    {
+      "key": "diffusion_model.layers.0.feed_forward.w2.lora_down.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        12288
+      ]
+    }
+  ],
+  "expected": {
+    "arch": "Ideogram4",
+    "structural_family": "Ideogram4DiT",
+    "status": "ok",
+    "confidence": "high"
+  }
+}

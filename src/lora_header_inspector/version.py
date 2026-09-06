@@ -1,0 +1,18 @@
+"""Package and on-disk schema versions."""
+
+TOOL_VERSION = "0.6.2"
+
+INSPECTION_SCHEMA_NAME = "lora-inspection"
+INSPECTION_SCHEMA_VERSION = "2.0"
+PLAN_SCHEMA_NAME = "lora-sort-plan"
+PLAN_SCHEMA_VERSION = "2.0"
+COLLISION_SCHEMA_NAME = "lora-collision-report"
+COLLISION_SCHEMA_VERSION = "1.0"
+MANIFEST_SCHEMA_NAME = "lora-operation-manifest"
+MANIFEST_SCHEMA_VERSION = "2.0"
+UNDO_SCHEMA_NAME = "lora-undo-manifest"
+UNDO_SCHEMA_VERSION = "2.0"
+SIGNATURE_REPORT_SCHEMA_NAME = "lora-signature-report"
+SIGNATURE_REPORT_SCHEMA_VERSION = "1.0"
+SIGNATURE_FIXTURE_SCHEMA_NAME = "lora-signature-fixture"
+SIGNATURE_FIXTURE_SCHEMA_VERSION = "1.0"

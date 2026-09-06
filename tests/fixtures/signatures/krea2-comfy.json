@@ -1,0 +1,45 @@
+{
+  "schema_name": "lora-signature-fixture",
+  "schema_version": "1.0",
+  "tool_version": "0.6.0",
+  "provenance": {
+    "source_type": "synthetic",
+    "exporter": "regression-fixture",
+    "notes": "Minimal payload-free header shape derived from regression expectations."
+  },
+  "metadata": {},
+  "fixture_id": "krea2-comfy-gqa-swiglu",
+  "filename": "krea2_fixture.safetensors",
+  "tensors": [
+    {
+      "key": "diffusion_model.blocks.0.attn.wq.lora_down.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        6144
+      ]
+    },
+    {
+      "key": "diffusion_model.blocks.0.attn.gate.lora_down.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        6144
+      ]
+    },
+    {
+      "key": "diffusion_model.blocks.0.mlp.down.lora_down.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        16384
+      ]
+    }
+  ],
+  "expected": {
+    "arch": "Krea2",
+    "structural_family": "Krea2DiT",
+    "status": "ok",
+    "confidence": "high"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "all_hardlink_groups_verified": true,
+  "all_undo_groups_restored_as_independent_files": true,
+  "apply_counts": {
+    "errors": 0,
+    "moved": 100,
+    "rolled_back": 0,
+    "skipped": 140
+  },
+  "different_content_groups": 20,
+  "exact_groups": 100,
+  "input_files": 240,
+  "plan_actions": {
+    "hardlink_duplicate_group": 100,
+    "hardlink_duplicate_member": 100,
+    "skip_content_collision": 40
+  },
+  "undo_return_code": 0
+}

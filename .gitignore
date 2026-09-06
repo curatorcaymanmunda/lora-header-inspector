@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.coverage
+.coverage.*
+htmlcov/
+
+# Library census artifacts: inspection CSVs, plans, manifests, and models
+# must never ride along into the repository. Test fixtures live under
+# tests/fixtures/ and are committed explicitly.
+/*.csv
+/part_*.csv
+/old_runs/
+*.safetensors
+/manifest*.json
+/*_sort_plan.csv
+/*_undo*.json
+/*_recovery_*.json
+*collision_report*.json
+*.tar.gz

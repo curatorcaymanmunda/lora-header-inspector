@@ -1,0 +1,23 @@
+{
+  "schema_name": "lora-signature-fixture",
+  "schema_version": "1.0",
+  "tool_version": "0.6.0",
+  "provenance": {
+    "source_type": "synthetic",
+    "exporter": "regression-fixture",
+    "notes": "Minimal payload-free header shape derived from regression expectations."
+  },
+  "metadata": {
+    "ss_base_model_version": "Pony-Diffusion-V7"
+  },
+  "fixture_id": "pony-v7-auraflow-metadata",
+  "filename": "pony_v7_fixture.safetensors",
+  "tensors": [],
+  "expected": {
+    "arch": "AuraFlow",
+    "status": "ok",
+    "confidence": "high",
+    "ecosystem": "Pony",
+    "model_version": "7"
+  }
+}

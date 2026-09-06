@@ -1,0 +1,29 @@
+{
+  "schema_name": "lora-signature-fixture",
+  "schema_version": "1.0",
+  "tool_version": "0.6.0",
+  "provenance": {
+    "source_type": "synthetic",
+    "exporter": "regression-fixture",
+    "notes": "Minimal payload-free header shape derived from regression expectations."
+  },
+  "metadata": {},
+  "fixture_id": "sdxl-kohya-attn-width",
+  "filename": "sdxl_fixture.safetensors",
+  "tensors": [
+    {
+      "key": "lora_unet_input_blocks_4_1_transformer_blocks_0_attn2_to_k.lora_down.weight",
+      "dtype": "F16",
+      "shape": [
+        8,
+        2048
+      ]
+    }
+  ],
+  "expected": {
+    "arch": "SDXL",
+    "structural_family": "SDUNet",
+    "status": "ok",
+    "confidence": "high"
+  }
+}

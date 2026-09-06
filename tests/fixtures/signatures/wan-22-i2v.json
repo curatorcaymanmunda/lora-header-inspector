@@ -1,0 +1,50 @@
+{
+  "schema_name": "lora-signature-fixture",
+  "schema_version": "1.0",
+  "tool_version": "0.6.0",
+  "provenance": {
+    "source_type": "synthetic",
+    "exporter": "regression-fixture",
+    "notes": "Minimal payload-free header shape derived from regression expectations."
+  },
+  "metadata": {
+    "ss_base_model_version": "wan-2.2-i2v-high-noise"
+  },
+  "fixture_id": "wan-22-i2v-high-noise",
+  "filename": "motion_fixture.safetensors",
+  "tensors": [
+    {
+      "key": "blocks.0.self_attn.k.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        5120
+      ]
+    },
+    {
+      "key": "blocks.0.cross_attn.k.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        5120
+      ]
+    },
+    {
+      "key": "blocks.0.ffn.0.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        5120
+      ]
+    }
+  ],
+  "expected": {
+    "arch": "Wan",
+    "structural_family": "WanLikeVideoDiT",
+    "status": "ok",
+    "confidence": "medium",
+    "model_version": "2.2",
+    "task_variant": "I2V",
+    "noise_stage": "high"
+  }
+}
