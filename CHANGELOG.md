@@ -1,5 +1,16 @@
 # Changelog
 
+## Unreleased
+
+- Add Linux GitHub Actions regression, explicit crash/recovery, build, metadata,
+  and isolated wheel/sdist installation checks on Python 3.9–3.15.
+- Fix fault-injection child-process imports in clean src-layout checkouts.
+- Add conservative FLUX.3 Image Klein, MOSS-Image, and FIBO 2.0 structural rules,
+  explicit metadata hints (including earlier FIBO), synthetic fixtures, and
+  negative regression tests. Existing mutation authorization is unchanged.
+- Reconcile historical test-count claims with current verified results in
+  TEST_RESULTS.md.
+
 ## 0.6.0
 
 ### Architecture

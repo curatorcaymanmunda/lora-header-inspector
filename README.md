@@ -1,5 +1,7 @@
 # LoRA Header Inspector
 
+[![CI](https://github.com/curatorcaymanmunda/lora-header-inspector/actions/workflows/ci.yml/badge.svg)](https://github.com/curatorcaymanmunda/lora-header-inspector/actions/workflows/ci.yml)
+
 LoRA Header Inspector is a dependency-free, header-only toolkit for identifying LoRA base architectures, reviewing a proposed library layout, analysing duplicate files, and applying reversible filesystem changes.
 
 It does **not** import PyTorch, load tensor payloads, or generate images. The inspector reads the safetensors JSON header, preserves uncertainty, writes a versioned CSV index, and produces a dry-run sort plan. The mover is a separate step and remains opt-in.

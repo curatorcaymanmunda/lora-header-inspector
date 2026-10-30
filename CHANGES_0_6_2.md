@@ -24,7 +24,7 @@
 
 ### Verification
 
-- Full compatibility suite: 192 tests green (182 existing + 10 fault injection).
+- Historical release-note claim: 192 tests green (182 existing + 10 fault injection). A clean-checkout rerun on 2026-10-30 actually discovered 216 tests before the new image-signature tests. See [current verified validation](TEST_RESULTS.md); this historical count is not the current suite size.
 - Transaction layer branch coverage 58% -> 64% with crashed subprocesses counted; recovery analyzers remain the thinnest area and are the suggested next target.
 
 ### Header parsing increments (from the external parsing review)

@@ -1,0 +1,37 @@
+{
+  "schema_name": "lora-signature-fixture",
+  "schema_version": "1.0",
+  "tool_version": "0.6.2",
+  "provenance": {
+    "source_type": "synthetic",
+    "exporter": "regression-fixture",
+    "notes": "Synthetic sparse adapter shapes based on published implementation module names; see docs/RECENT_IMAGE_SIGNATURES.md. Not a real export."
+  },
+  "metadata": {},
+  "fixture_id": "flux3-published-modules",
+  "filename": "neutral.safetensors",
+  "tensors": [
+    {
+      "key": "diffusion_model.content_mode_blocks.image.3.q_proj.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        3072
+      ]
+    },
+    {
+      "key": "diffusion_model.txt_mode_blocks.1.attn_out.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        3072
+      ]
+    }
+  ],
+  "expected": {
+    "arch": "Flux3",
+    "structural_family": "Flux3DiT",
+    "status": "ok",
+    "confidence": "high"
+  }
+}

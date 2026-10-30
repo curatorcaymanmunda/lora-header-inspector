@@ -1,6 +1,11 @@
 # Validation evidence
 
-These logs were generated from the v0.6.0 source release.
+Current locally verified CI-equivalent results are summarized in
+[`ci_local_results.log`](ci_local_results.log) and [TEST_RESULTS.md](../TEST_RESULTS.md).
+Hosted run results are available under the repository Actions tab.
+
+The other logs below were generated from the v0.6.0 source release and are
+historical evidence only; their counts and coverage were not re-measured.
 
 - `tests_final.log`: 182 unit and regression tests, including the compatibility runner.
 - `static_validation.log`: compilation, tabnanny, Python 3.9 grammar parsing, import sweep, whitespace checks, and local documentation-link checks.

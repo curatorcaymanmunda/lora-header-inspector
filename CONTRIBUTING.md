@@ -69,3 +69,27 @@ Follow `docs/REAL_FIXTURES.md`. A fixture must not include tensor payloads, data
 ## Compatibility
 
 The package supports Python 3.9 and newer. Avoid syntax introduced after Python 3.9 unless the minimum version is deliberately changed and documented.
+
+## CI and package validation
+
+GitHub Actions runs the complete runner and an explicit fault-injection/recovery
+selector on Linux with Python 3.9–3.15. Tests run before any package installation
+so subprocess imports must work from a clean source checkout. All tests that
+modify files must stay inside temporary directories; never point CI at a real
+LoRA library or relax authorization/recovery assertions to make a job pass.
+
+Each job also builds an sdist and a wheel from it, checks metadata with Twine,
+and installs each artifact into a separate virtual environment. The installed
+check runs from outside the repository with isolated Python mode to prevent
+source imports from masking missing package contents. Build tools are development
+dependencies only; the package remains free of runtime dependencies.
+
+For an installed distribution, run from outside the checkout:
+
+```bash
+/path/to/venv/bin/python -I /path/to/checkout/ci/check_installed.py /path/to/checkout/tests/fixtures/signatures
+```
+
+Update [TEST_RESULTS.md](TEST_RESULTS.md) using observed interpreter versions,
+runner counts, skips, and artifact checks. The older files in `validation/`
+are explicitly historical and are not proof of current validation.

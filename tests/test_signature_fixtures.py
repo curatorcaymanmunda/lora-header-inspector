@@ -17,7 +17,7 @@ class SignatureFixtureTests(unittest.TestCase):
     def test_bundled_signature_fixtures_match(self):
         paths = fixtures.collect_fixture_paths([str(FIXTURE_DIR)])
         results = fixtures.validate_fixture_paths(paths)
-        self.assertEqual(len(results), 10)
+        self.assertEqual(len(results), 13)
         self.assertTrue(all(result.valid for result in results))
         self.assertTrue(all(result.matched for result in results))
 
@@ -103,9 +103,9 @@ class SignatureFixtureTests(unittest.TestCase):
                 rc = fixtures.main([str(FIXTURE_DIR), "--output", str(report)])
             self.assertEqual(rc, 0)
             payload = json.loads(report.read_text(encoding="utf-8"))
-            self.assertEqual(payload["fixture_count"], 10)
+            self.assertEqual(payload["fixture_count"], 13)
             self.assertEqual(payload["failed"], 0)
-            self.assertIn("passed=10", output.getvalue())
+            self.assertIn("passed=13", output.getvalue())
 
 
 if __name__ == "__main__":

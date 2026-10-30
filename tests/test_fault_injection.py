@@ -37,6 +37,8 @@ import errno, io, json, os, sys, contextlib
 from pathlib import Path
 
 sys.path.insert(0, os.environ["FI_ROOT"])
+# Match the compatibility runner in clean src-layout checkouts.
+sys.path.insert(0, str(Path(os.environ["FI_ROOT"]) / "src"))
 
 from lora_header_inspector import planner, transactions
 from tests.test_transaction_journals import sdxl_model, write_index
