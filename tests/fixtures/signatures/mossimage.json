@@ -1,0 +1,37 @@
+{
+  "schema_name": "lora-signature-fixture",
+  "schema_version": "1.0",
+  "tool_version": "0.6.2",
+  "provenance": {
+    "source_type": "synthetic",
+    "exporter": "regression-fixture",
+    "notes": "Synthetic sparse adapter shapes based on published implementation module names; see docs/RECENT_IMAGE_SIGNATURES.md. Not a real export."
+  },
+  "metadata": {},
+  "fixture_id": "mossimage-published-modules",
+  "filename": "neutral.safetensors",
+  "tensors": [
+    {
+      "key": "transformer.layers.7.proj.ffn_up_gate.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        3072
+      ]
+    },
+    {
+      "key": "transformer.shared_block_modulation.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        3072
+      ]
+    }
+  ],
+  "expected": {
+    "arch": "MOSSImage",
+    "structural_family": "MOSSImageDiT",
+    "status": "ok",
+    "confidence": "high"
+  }
+}

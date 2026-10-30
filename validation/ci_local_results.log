@@ -1,0 +1,133 @@
+Local CI-equivalent validation: 2026-10-30, Linux x86-64
+Base commit: b4ac1b92004380640fdc3e8109efb71f6fe05533 plus this change
+
+Python 3.9.25
+python test_lora_tools.py
+----------------------------------------------------------------------
+Ran 228 tests in 2.076s
+
+OK
+python test_lora_tools.py tests.test_fault_injection
+----------------------------------------------------------------------
+Ran 10 tests in 1.386s
+
+OK
+wheel: pip install; pip check; python -I ci/check_installed.py <fixtures>
+PASS: installed site-packages import, four console scripts, module CLI,
+13 fixtures, read-only synthetic smoke inspection; no broken requirements.
+sdist: pip install; pip check; python -I ci/check_installed.py <fixtures>
+PASS: installed site-packages import, four console scripts, module CLI,
+13 fixtures, read-only synthetic smoke inspection; no broken requirements.
+
+Python 3.10.22
+python test_lora_tools.py
+----------------------------------------------------------------------
+Ran 228 tests in 1.976s
+
+OK
+python test_lora_tools.py tests.test_fault_injection
+----------------------------------------------------------------------
+Ran 10 tests in 1.250s
+
+OK
+wheel: pip install; pip check; python -I ci/check_installed.py <fixtures>
+PASS: installed site-packages import, four console scripts, module CLI,
+13 fixtures, read-only synthetic smoke inspection; no broken requirements.
+sdist: pip install; pip check; python -I ci/check_installed.py <fixtures>
+PASS: installed site-packages import, four console scripts, module CLI,
+13 fixtures, read-only synthetic smoke inspection; no broken requirements.
+
+Python 3.11.17
+python test_lora_tools.py
+----------------------------------------------------------------------
+Ran 228 tests in 2.055s
+
+OK
+python test_lora_tools.py tests.test_fault_injection
+----------------------------------------------------------------------
+Ran 10 tests in 1.236s
+
+OK
+wheel: pip install; pip check; python -I ci/check_installed.py <fixtures>
+PASS: installed site-packages import, four console scripts, module CLI,
+13 fixtures, read-only synthetic smoke inspection; no broken requirements.
+sdist: pip install; pip check; python -I ci/check_installed.py <fixtures>
+PASS: installed site-packages import, four console scripts, module CLI,
+13 fixtures, read-only synthetic smoke inspection; no broken requirements.
+
+Python 3.12.14
+python test_lora_tools.py
+----------------------------------------------------------------------
+Ran 228 tests in 2.101s
+
+OK
+python test_lora_tools.py tests.test_fault_injection
+----------------------------------------------------------------------
+Ran 10 tests in 1.423s
+
+OK
+wheel: pip install; pip check; python -I ci/check_installed.py <fixtures>
+PASS: installed site-packages import, four console scripts, module CLI,
+13 fixtures, read-only synthetic smoke inspection; no broken requirements.
+sdist: pip install; pip check; python -I ci/check_installed.py <fixtures>
+PASS: installed site-packages import, four console scripts, module CLI,
+13 fixtures, read-only synthetic smoke inspection; no broken requirements.
+
+Python 3.13.16
+python test_lora_tools.py
+----------------------------------------------------------------------
+Ran 228 tests in 2.172s
+
+OK
+python test_lora_tools.py tests.test_fault_injection
+----------------------------------------------------------------------
+Ran 10 tests in 1.356s
+
+OK
+wheel: pip install; pip check; python -I ci/check_installed.py <fixtures>
+PASS: installed site-packages import, four console scripts, module CLI,
+13 fixtures, read-only synthetic smoke inspection; no broken requirements.
+sdist: pip install; pip check; python -I ci/check_installed.py <fixtures>
+PASS: installed site-packages import, four console scripts, module CLI,
+13 fixtures, read-only synthetic smoke inspection; no broken requirements.
+
+Python 3.14.8
+python test_lora_tools.py
+----------------------------------------------------------------------
+Ran 228 tests in 2.039s
+
+OK
+python test_lora_tools.py tests.test_fault_injection
+----------------------------------------------------------------------
+Ran 10 tests in 1.246s
+
+OK
+wheel: pip install; pip check; python -I ci/check_installed.py <fixtures>
+PASS: installed site-packages import, four console scripts, module CLI,
+13 fixtures, read-only synthetic smoke inspection; no broken requirements.
+sdist: pip install; pip check; python -I ci/check_installed.py <fixtures>
+PASS: installed site-packages import, four console scripts, module CLI,
+13 fixtures, read-only synthetic smoke inspection; no broken requirements.
+
+python -m build: sdist and wheel-from-sdist succeeded (isolated)
+python -m twine check --strict dist/*: both distributions PASSED
+Workflow YAML parse and git diff --check: passed
+No production transaction code changed. Historical coverage/fuzz/stress not rerun.
+
+Python 3.15.0
+python test_lora_tools.py
+----------------------------------------------------------------------
+Ran 228 tests in 1.898s
+
+OK
+python test_lora_tools.py tests.test_fault_injection
+----------------------------------------------------------------------
+Ran 10 tests in 1.190s
+
+OK
+wheel: pip install; pip check; python -I ci/check_installed.py <fixtures>
+PASS: installed site-packages import, four console scripts, module CLI,
+13 fixtures, read-only synthetic smoke inspection; no broken requirements.
+sdist: pip install; pip check; python -I ci/check_installed.py <fixtures>
+PASS: installed site-packages import, four console scripts, module CLI,
+13 fixtures, read-only synthetic smoke inspection; no broken requirements.

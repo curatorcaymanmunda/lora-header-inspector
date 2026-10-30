@@ -11,6 +11,10 @@ This table describes the intended evidence policy, not a claim that every sparse
 | AuraFlow | Joint plus single transformer paths, or native double/single paths | Yes | Pony V7 is represented as Pony ecosystem on AuraFlow. |
 | Flux.1 | Shared dual/single-stream family | Required for exact Flux.1 in many sparse exports | Generic Flux words are weak. |
 | Flux.2 | Fused single-block QKV/MLP projection | Yes | Klein is a Flux.2 variant only with suitable context. |
+| FLUX.3 Image Klein | Image and text mode-stream adapters, input width 3072 | Yes | BFL/Comfy spellings; sparse single-stream exports may remain unresolved. |
+| MOSS-Image | Shared block modulation plus fused FFN gate, input width 3072 | Yes | Does not distinguish Base from SFT. |
+| FIBO 2.0 | Perceiver plus independent main-layer cross-attention, context width 7680 | Yes | Comfy spelling; dev/edit/turbo are not inferred. |
+| Earlier FIBO | No exact structural detector | Required | Explicit identity metadata only; versions remain separate. |
 | Chroma | `distilled_guidance_layer` | Yes | Bare filename word `chroma` is intentionally inert. |
 | LongCat Image | 3584-wide context projection inside the dual/single family | Yes | Other Flux-like keys are shared. |
 | HunyuanVideo | Token-refiner module path | Yes | Maximum observed block index is not treated as model depth. |
@@ -41,3 +45,5 @@ An ecosystem can imply a compatibility constraint, but it is not allowed to over
 Checkpoint variants such as Z-Image Base, Z-Image Turbo, Flux Kontext, Flux Schnell, Flux Klein, Bernini-R, and Anima Aesthetic are recorded separately from techniques such as LCM, Lightning, Hyper, and DMD.
 
 A generic `portrait_turbo.safetensors` may carry `Turbo` as a technique. An explicit `Z-Image-Turbo` identity carries `Turbo` as a checkpoint variant and does not duplicate the label in the technique field.
+
+See [new image signature evidence and limits](docs/RECENT_IMAGE_SIGNATURES.md).

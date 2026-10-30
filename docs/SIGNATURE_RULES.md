@@ -82,3 +82,7 @@ A durable addition needs:
 6. negative lookalike tests;
 7. a fixture;
 8. documentation of cases that remain ambiguous.
+
+## New image-model rules
+
+See [FLUX.3, MOSS-Image, and FIBO evidence](RECENT_IMAGE_SIGNATURES.md) for primary sources, required anchors, widths, and unresolved sparse-export cases.

@@ -11,3 +11,4 @@ include inspect_sort_lora.py
 include test_lora_tools.py
 recursive-include docs *.md *.py
 recursive-include tests *.py *.json
+recursive-include ci *.py

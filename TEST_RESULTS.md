@@ -1,4 +1,85 @@
-# Validation results for 0.6.0
+# Current validation: post-0.6.2 working tree
+
+Verified locally on 2026-10-30, Linux x86-64. The package version remains 0.6.2;
+these results include the unreleased CI and image-signature changes. They are
+not a retroactive claim about the published 0.6.2 archive.
+
+## Automated regression results
+
+| Python | Complete compatibility runner | Explicit fault-injection selector |
+|---|---|---|
+| 3.9.25 | 228 passed; no failures, errors, or skips | 10 passed |
+| 3.10.22 | 228 passed; no failures, errors, or skips | 10 passed |
+| 3.11.17 | 228 passed; no failures, errors, or skips | 10 passed |
+| 3.12.14 | 228 passed; no failures, errors, or skips | 10 passed |
+| 3.13.16 | 228 passed; no failures, errors, or skips | 10 passed |
+| 3.14.8 | 228 passed; no failures, errors, or skips | 10 passed |
+| 3.15.0 | 228 passed; no failures, errors, or skips | 10 passed |
+
+Commands, run in a clean source checkout without an editable installation:
+
+```bash
+python test_lora_tools.py
+python test_lora_tools.py tests.test_fault_injection
+```
+
+The ten fault tests are included in the full count, then run explicitly again.
+They hard-exit child processes after journal writes and verify interrupted
+apply/undo recovery, same-filesystem and simulated cross-filesystem moves,
+duplicate hard links, quarantine, sidecars, and staging cleanup. All mutation
+uses synthetic data in temporary directories. Existing authorization,
+no-overwrite, rollback, undo, and recovery tests remain enabled.
+
+The baseline checkout actually discovers 216 tests, rather than either historical
+count (182 or 192). Its ten fault tests initially failed from an uninstalled
+checkout because child processes could not import the src-layout package.
+The harness now adds `src/` to those child processes' import path, matching the
+compatibility runner. No transaction implementation changed. Twelve new test
+methods cover FLUX.3, MOSS-Image, and FIBO recognition, including subtests for
+negative, partial, conflicting, and exporter-spelling cases: 228 methods total.
+
+## Packaging and installed behavior
+
+- `python -m build` produced a source archive and built the wheel from that
+  archive, using isolated build environments.
+- `python -m twine check --strict dist/*` passed for both distributions.
+- Both distributions installed separately in fresh virtual environments on
+  each of the seven Python versions above; `pip check` passed in all fourteen.
+- Each installed package was exercised from outside the repository with
+  `python -I ci/check_installed.py ...`, using its virtual environment interpreter.
+  The script verifies the import comes from site-packages, all four console
+  entry points load, the module entry point loads, all 13 synthetic signature
+  fixtures pass, and read-only inspection leaves a temporary model unchanged.
+- Workflow YAML parsing and `git diff --check` passed.
+
+## Continuous integration
+
+[CI workflow](.github/workflows/ci.yml) runs on pushes, pull requests, and manual
+dispatch. Each Linux job uses Python 3.9, 3.10, 3.11, 3.12, 3.13, 3.14, or 3.15 and runs
+the full suite, the explicit fault selector, isolated builds, strict metadata
+checks, and separate wheel/sdist installations outside the checkout. The
+minimum remains tested even after upstream end of life. Jobs fail independently
+without cancelling the other Python versions. Tokens have read-only contents
+permission, checkout does not persist credentials, and jobs have timeouts.
+
+These are verified local results; hosted CI results are recorded by the linked
+workflow runs after the branch is pushed. CI does not publish packages or modify
+real libraries. See [validation evidence](validation/README.md) and
+[model-recognition limits](docs/RECENT_IMAGE_SIGNATURES.md).
+
+## Validation limits
+
+The new architecture fixtures are synthetic, derived from published module
+names and dimensions. They do not establish broad real-export coverage, load
+models, or test image generation. Sparse exports can remain unresolved. Earlier
+FIBO generations rely on identity metadata. Local checks used Linux; macOS,
+Windows, actual cross-device mounts, network and clustered filesystem semantics
+are not certified by this matrix. Historical fuzz, stress, and coverage figures
+below were not re-measured and must not be presented as current results.
+
+---
+
+# Historical validation for 0.6.0 (retained audit record)
 
 Validation was run on Linux x86-64 with Python 3.13.5. The package declares Python 3.9 or newer; every Python source file was also parsed with Python 3.9 grammar.
 

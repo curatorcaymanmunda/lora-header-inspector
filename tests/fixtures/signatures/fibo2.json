@@ -1,0 +1,37 @@
+{
+  "schema_name": "lora-signature-fixture",
+  "schema_version": "1.0",
+  "tool_version": "0.6.2",
+  "provenance": {
+    "source_type": "synthetic",
+    "exporter": "regression-fixture",
+    "notes": "Synthetic sparse adapter shapes based on published implementation module names; see docs/RECENT_IMAGE_SIGNATURES.md. Not a real export."
+  },
+  "metadata": {},
+  "fixture_id": "fibo2-published-modules",
+  "filename": "neutral.safetensors",
+  "tensors": [
+    {
+      "key": "diffusion_model.perceiver.layers.1.cross_attention.to_kv.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        7680
+      ]
+    },
+    {
+      "key": "diffusion_model.layers.14.cross_attention.to_kv.lora_A.weight",
+      "dtype": "BF16",
+      "shape": [
+        8,
+        7680
+      ]
+    }
+  ],
+  "expected": {
+    "arch": "FIBO2",
+    "structural_family": "FIBO2DiT",
+    "status": "ok",
+    "confidence": "high"
+  }
+}
